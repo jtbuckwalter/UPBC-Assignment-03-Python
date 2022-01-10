@@ -1,6 +1,5 @@
 import os
 import csv
-import numpy as np
 
 csvpath = os.path.join('Resources', 'election_data.csv')
 
@@ -30,7 +29,8 @@ with open(csvpath) as csvfile:
 # Find the unique candidates and add them to a list
         if row[2] not in candidates_unique:
             candidates_unique.append(row[2])
-        
+
+# Talley votes for each candidate        
         if row[2] == "Khan":
             khan_votes += 1
         
@@ -42,8 +42,6 @@ with open(csvpath) as csvfile:
 
         elif row[2] == "O'Tooley":
             tooley_votes += 1
-
-# print(candidates_unique) # I only used this to check who the candidates were.
 
 # calculate rounded percentages
 
